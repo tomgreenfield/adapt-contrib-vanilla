@@ -1,111 +1,143 @@
 .matching-component {
 
-  .matching-item {
-    padding-bottom: @item-padding-bottom;
-  }
-
-  .matching-item-title {
-    margin-bottom: @item-margin-top;
-  }
-
-  .matching-select-container {
-    background-color: @item-color;
-
-    @media all and (max-width:@device-width-medium) {
-      width:100%;
-    }
-  }
-
-  .matching-select-icon {
-    color: @item-text-color;
-  }
-
-  .matching-correct-icon {
-    color: @validation-success;
-  }
-
-  .matching-incorrect-icon {
-    color: @validation-error;
-  }
-
-  .matching-select {
-    padding: @item-padding-top @item-padding-left @item-padding-bottom @item-padding-right;
-	.dir-rtl & {
-        padding: @item-padding-top @item-padding-left @item-padding-bottom @item-padding-left;
-    }
-
-    @media all and (max-width:@device-width-medium) and (min-width:@device-width-small) {
-        width:105%;
-    }
-      
-    @media all and (max-width:(@device-width-small - 1)) {
-       width:110%;
-    }
-
-    &:focus {
-      background-color: @item-color-selected;
-    }
-  }
-
- 	.matching-select:disabled {
-		color: @item-text-color-disabled;
+	.matching-item {
+		padding-bottom: @item-padding-bottom;
 	}
 
-  .matching-widget {
+	.matching-item-title {
+		margin-bottom: @item-margin-bottom;
+	}
 
-    &.submitted {
-      .matching-select-container {
-        background-color: @item-color-disabled;
-      }
-    }
+	.matching-select-container {
+		background-color: @item-color;
+	}
 
-  }
+	.matching-select {
+		color: @item-text-color;
+		&:focus {
+			background-color: @item-color-selected;
+		}
+	}
 
+	.matching-widget {
+		&.submitted {
+			.matching-select-container {
+				background-color: @item-disabled-color;
+			}
+		}
+	}
 }
 
 .no-touch {
-  .matching-select-icon {
-    &:hover {
-      color: @item-text-color-hover;
-      &.matching-correct-icon {
-        color: @validation-success;
-      }
-      &.matching-incorrect-icon {
-        color: @validation-error;
-      }
-    }
-  }
-  .matching-select-container {
-    &:hover {
-      background-color: @item-color-hover;
-      .matching-select {
-        color: @item-text-color-hover;
-        &:disabled {
-          color: @item-text-color-disabled;
+	.matching-select-container {
+		&:hover {
+			color: @item-text-color-hover;
+			background-color: @item-color-hover;
+		}
+	}
+}
+
+.matching-component {
+  .matching-inner {
+    .matching-widget {
+      .matching-item {
+        .select2-container {
+
+          &.select2-container-active {
+        		.accessibility & {
+        			outline: @focus-outline;
+        		}
+        	}
+
+        	.select2-choice {
+        		background: none;
+        		padding: @item-padding-top @item-padding-right @item-padding-bottom @item-padding-left;
+        		color: @item-text-color;
+        		&.select2-default {
+        			color: @item-text-color;
+        		}
+
+        		.select2-arrow {
+        			right: @item-padding-right;
+        			font-size: @icon-size;
+        			.dir-rtl & {
+        				right: inherit;
+        				left: @item-padding-left;
+        			}
+        		}
+        	}
+
+        	&.select2-dropdown-open {
+        		.select2-choice {
+        			background-color: @item-color-selected;
+        			color: @item-text-color-selected;
+        		}
+        	}
+
+        	&.select2-container-disabled {
+        		.select2-choice {
+        			background: @item-color-disabled;
+        			color: @item-text-color-disabled;
+        		}
+        	}
         }
       }
-      .matching-dropdown-icon {
-        color: @item-text-color-hover;
+    }
+  }
+}
+
+.matching-widget {
+	&.show-user-answer {
+		.incorrect {
+			.select2-arrow {
+				&:before {
+					color: @validation-error;
+				}
+			}
+		}
+
+		.correct {
+			.select2-arrow {
+				&:before {
+					color: @validation-success;
+				}
+			}
+		}
+	}
+
+	&.show-correct-answer {
+		.select2-arrow {
+			&:before {
+				color: @validation-success;
+			}
+		}
+	}
+}
+
+.select2-drop {
+	background-color: @item-body-color;
+	color: @item-body-text-color;
+	border: solid 2px @item-color-selected;
+
+	.select2-results {
+		li {
+      padding: (@item-padding-top / 2) @item-padding-right (@item-padding-bottom / 2) @item-padding-left;
+
+      .select2-result-label {
+        padding: 0;
       }
-    }
-  }
-}
 
-.ie8 {
-  .submitted.matching-widget .matching-select-container {
-    background-color: @white;
-  }
-  .matching-select-container {
-    &.disabled {
-      background-color: @item-color-disabled;
-    }
-  }
-}
+			&:hover {
+				.no-touch & {
+					background-color: @item-color-hover;
+					color: @item-text-color-hover;
+				}
+			}
+		}
 
-
-//*IE FIX FOR DISABLED ITEMS
-.matching-component {
-  select[disabled]::-ms-value{
-      color: @item-text-color;
-  }
+		.select2-highlighted {
+			background-color: @item-color-hover;
+			color: @item-text-color-hover;
+		}
+	}
 }
