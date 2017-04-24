@@ -51,17 +51,17 @@ Visit the [**Vanilla** wiki](https://github.com/adaptlearning/adapt-contrib-vani
 
 | Folder/File         | Description  |
 | :-------------      |:-------------|
-| theme.json          | Pixel values for `screenSize`(`small`, `medium`, and `large`)|
-| selection.json      | File used for selecting icons at [IcoMoon.io](https://icomoon.io/) that are packaged in fonts/vanilla.* |
-| assets              | Location of theme assets (for example: images, loading gif, etc.)|
-| fonts/vanilla.*     | Icon font referenced in the associated *.less* files      |   
-| js                  | JavaScript files on which the theme depends      |
-| less                | Location of any [LESS](http://lesscss.org/) based CSS files |
-| less/generic.less   | Variables that are not covered by those defined in colors.less, fonts.less, and paddings.less   |
+| 📄 theme.json          | Pixel values for `screenSize`(`small`, `medium`, and `large`)
+| 📄 selection.json      | File used for selecting icons at [IcoMoon.io](https://icomoon.io/) that are packaged in fonts/vanilla.* |
+| 📁 assets              | Location of theme assets (for example: images, loading gif, etc.)|
+| 📁 fonts/vanilla.*     | Icon font referenced in the associated *.less* files      |   
+| 📁 js                  | JavaScript files on which the theme depends      |
+| 📁 less                | Location of any [LESS](http://lesscss.org/) based CSS files |
+| 📄 less/generic.less   | Variables that are not covered by those defined in colors.less, fonts.less, and paddings.less   |
 | less/src            | Location of LESS files for various Adapt elements |
-| less/src/theme-extras.less| Classes used for bespoke styling |
-| templates           | Location of pre-defined HTML (.hbs) templates |
-| templates/partials  | Location of pre-defined HTML (.hbs) templates required by other templates, specifically buttons.hbs, component.hbs, and state.hbs |  
+| 📄 less/src/theme-extras.less| Classes used for bespoke styling |
+| 📁 templates           | Location of pre-defined HTML (.hbs) templates |
+| 📁 templates/partials  | Location of pre-defined HTML (.hbs) templates required by other templates, specifically buttons.hbs, component.hbs, and state.hbs |  
 
 ##Templates  
 
